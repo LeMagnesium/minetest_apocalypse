@@ -1,7 +1,6 @@
 local sheet =	{ -1/2  , -1/2   , -1/2   , 1/2    , -7/16  ,  1/2  }
 local info  =	'Ci-gît '
 local sign  =	' décédé le '
-local signed = 'hallo'
 
 minetest.register_node("funerarium:sign_wall", {
 	description = "Panneau funeraire",
@@ -24,25 +23,38 @@ minetest.register_node("funerarium:sign_wall", {
 	legacy_wallmounted = true,
 	on_construct = function(pos)
 		local meta = minetest.get_meta(pos)
+		meta:set_string("nom","")
+		meta:set_string("date","")
 		meta:set_string(
 					"formspec", 
 					"size[10,7]"..
-					"field[1,1;8.5,1;text; Nom du defunt;${nom}]"..
-					"field[1,3;4.25,1;signed; Date de la mort (optionnel);${date}]"..
+					"field[1,1;8.5,1;nom; Nom du defunt;${nom}]"..
+					"field[1,3;4.25,1;date; Date de la mort (optionnel);${date}]"..
 					"button_exit[0.75,5;4.25,1;text,signed;Enterrer]"
 				)
 	end,
 	on_receive_fields = function(pos, formname, fields, sender)
 		local meta = minetest.get_meta(pos)
-		fields.text = fields.text
-		fields.signed = fields.signed
-		local direction = minetest.env:get_node(pos).param2
-	  meta:set_string("signed", fields.text)
-		-- meta:set_string("signed", "")
-		-- meta:set_string("infotext", info..fields...'" Unsigned')
-		if fields.signed ~= "" then
-			meta:set_string("signed", fields.date)
-			meta:set_string("infotext", info..fields.text..sign..fields.signed)
+		if fields.nom == nil or fields.date == nil then
+      meta:set_string("nom","")
+      meta:set_string("date","")
+      meta:set_string("infotext","")
+      return
+    end
+		if fields.nom == "" then
+      minetest.chat_send_player(sender:get_player_name(), "No name entered. Cannot burry.")
+      return
 		end
+		
+		nom = fields.nom
+		date = fields.date
+		
+		meta:set_string("nom", nom)
+		meta:set_string("date", date)
+		if date ~= "" then
+			meta:set_string("infotext", info..nom..sign..date)
+		else
+      meta:set_string("infotext", info..nom..".")
+    end
 	end,
 })

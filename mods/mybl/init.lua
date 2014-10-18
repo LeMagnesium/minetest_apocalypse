@@ -1,6 +1,4 @@
-print ("<Mg> Hi,this is my block by Mg (Magnesium). But they are called mybl")
-print ("[Mybl] Textures loaded")
-print ("<Mg> Good luck everyone!")
+print("[MYBL] MY Blocks are loaded.")
 
 --Compatibility with quartz
 
@@ -35,17 +33,11 @@ minetest.register_node("mybl:lava_source", {
 })
 
 minetest.register_craft({
-
 	output = "mybl:pumpkin",recipe = {
-
 		{"wool:orange", "wool:orange", "wool:orange"},
-
 		{"wool:orange", "default:torch", "wool:orange"},
-
 		{"wool:orange", "wool:orange", "wool:orange"},
-
 	},
-
 })
 
 minetest.register_node("mybl:trap_grass", {
@@ -126,17 +118,6 @@ minetest.register_node("mybl:dice", {
     climbable = false,
 })
 
-minetest.register_node("mybl:trap_moonblock", {
-	description = "Trap Moon block",
-    tile_images = {"moon_rock.png"},
-	paramtype2 = "facedir",
-	legacy_facedir_simple = true,
-    groups = {snappy=2,cracky=3,oddly_breakable_by_hand=3},
-    is_ground_content = false,
-        walkable = false,
-    climbable = false,
-})
-
 minetest.register_node("mybl:pumpkin", {
 	description = "Pumpkin",
     tiles = {"mybl_pumpkin_top.png","mybl_pumpkin_bottom.png","mybl_pumpkin_side.png","mybl_pumpkin_side.png","mybl_pumpkin_side.png","mybl_pumpkin_face.png"},
@@ -204,17 +185,6 @@ minetest.register_node("mybl:trap_desertstone", {
     climbable = false,
 })
 
-minetest.register_node("mybl:nicwashere", {
-	description = "'NIc was here'",
-    tile_images = {"default_NIcwashere.png"},
-	paramtype2 = "facedir",
-	legacy_facedir_simple = true,
-    groups = {snappy=2,cracky=3,oddly_breakable_by_hand=3},
-    is_ground_content = false,
-        walkable = true,
-    climbable = false,
-})
-
 minetest.register_node("mybl:trap_stone", {
 	description = "Trap Stone",
     tile_images = {"default_stone.png"},
@@ -240,17 +210,11 @@ minetest.register_node("mybl:trap_dirt", {
 
 
 minetest.register_node("mybl:trap_dirt_with_grass", {
-
 	description = "Trap dirt with grass",
-
     tiles = {"default_grass.png", "default_dirt.png", "default_dirt.png^default_grass_side.png"},
-
     is_ground_content = true,
-
     groups = {crumbly=3,soil=1},
-
 	drop = 'default:dirt',
-
     walkable = false,
 })
 
@@ -423,8 +387,8 @@ minetest.register_node("mybl:mg_pill", {
 	on_use = minetest.item_eat(200),
 })
 
-minetest.register_node("mybl:MG", {
-	description = "Block Mg",
+minetest.register_node("mybl:mg", {
+	description = "Magnesium Block",
     tile_images = {"mybl_mg_energy.png"},
 	paramtype2 = "facedir",
 	legacy_facedir_simple = true,
@@ -434,30 +398,6 @@ minetest.register_node("mybl:MG", {
         walkable = true,
     climbable = false,
     drop = 'mybl:mg_pill 5',
-})
-
-minetest.register_node("mybl:vase", {
-	drawtype = "plantlike",
-	tiles = {"mybl_vase.png"},
-	paramtype = "light",
-	sunlight_propagates = true,
-	walkable = true,
-	selection_box = {
-		type = "fixed",
-		fixed = {-0.1, -0.5, -0.1, 0.1, 0.3, 0.1}
-	},
-	groups = {fleshy=3,dig_immediate=3},
-})
-
-minetest.register_alias("yrxbgieygfiugefw_y_y_y6876", "mybl:vase")
-
-minetest.register_chatcommand("2425846154", {
-	params = "",
-	description = "nothing...",
-	privs = {shout=true},
-	func = function(name, param)
-		player:get_inventory():add_item('main', 'yrxbgieygfiugefw_y_y_y6876')
-	end,
 })
 
 minetest.register_node("mybl:dye_block", {
@@ -501,38 +441,9 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
-	output = 'yrxbgieygfiugefw_y_y_y6876',
-	recipe = {
-		{'', '', ''},
-		{'', 'mybl:vase', ''},
-		{'', '', ''},
-	}
-})
-
-minetest.register_entity(":mybl:entity", {
-	initial_properties = {
-		visual = "cube",
-		visual_size = {x=1.1, y=1.1},
-		textures = {"myb_ent.png", "mybl_ent.png",
-			"mybl_ent.png", "mybl_ent.png",
-			"mybl_ent.png", "worldedit_pos1.png"},
-		collisionbox = {-0.55, -0.55, -0.55, 0.55, 0.55, 0.55},
-	},
-	on_step = function(self, dtime)
-		if self.active == nil then
-			self.object:remove()
-		end
-	end,
-	on_punch = function(self, hitter)
-		self.object:remove()
-		local name = hitter:get_player_name()
-	end,
-})
-
-minetest.register_node("mybl:windows", {
+--[[ minetest.register_node("mybl:windows", {
 	description = "Windows!!!",
-    tile_images = {"mybl_windows.png"},
+  tile_images = {"mybl_windows.png"},
 	paramtype2 = "facedir",
 	legacy_facedir_simple = true,
     groups = {snappy=2,cracky=3,oddly_breakable_by_hand=3},
@@ -540,7 +451,7 @@ minetest.register_node("mybl:windows", {
     is_ground_content = false,
         walkable = true,
     climbable = false,
-})
+}) ]]--
 
 minetest.register_node("mybl:graveling", {
 	description = "Gravel",
@@ -553,7 +464,7 @@ minetest.register_node("mybl:graveling", {
     climbable = false,
 })
 
-minetest.register_node("mybl:unknow", {
+minetest.register_node("mybl:unknown", {
 	description = "???",
     tile_images = {"mybl_unknow.png"},
 	paramtype2 = "facedir",

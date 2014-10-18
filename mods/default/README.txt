@@ -22,16 +22,11 @@ Authors of media files
 Everything not listed in here:
 Copyright (C) 2010-2012 celeron55, Perttu Ahola <celeron55@gmail.com>
 
-Originating from work by kddekadenz/Dogers:
-  default_grass_footstep.{1,2,3}.ogg
-  default_dig_crumbly.{1,2}.ogg
-
 Cisoun's WTFPL texture pack:
   default_chest_front.png
   default_chest_lock.png
   default_chest_side.png
   default_chest_top.png
-  default_stone_brick.png
   default_dirt.png
   default_grass.png
   default_grass_side.png
@@ -42,23 +37,14 @@ Cisoun's WTFPL texture pack:
   default_sapling.png
   default_sign_wall.png
   default_stone.png
-  default_tool_mesepick.png
-  default_tool_steelpick.png
-  default_tool_steelshovel.png
-  default_tool_stonepick.png
-  default_tool_stoneshovel.png
-  default_tool_woodpick.png
-  default_tool_woodshovel.png
   default_tree.png
   default_tree_top.png
   default_water.png
 
 Originating from G4JC's Almost MC Texture Pack:
-  default_wood.png
   default_torch.png
   default_torch_on_ceiling.png
   default_torch_on_floor.png
-  default_cobble.png
 
 VanessaE's animated torches (WTFPL):
   default_torch_animated.png
@@ -84,11 +70,7 @@ VanessaE (WTFPL):
 
 Calinou (CC BY-SA):
   default_brick.png
-  default_clay_brick.png
   default_papyrus.png
-  default_tool_steelsword.png
-  default_bronze_ingot.png
-  default_copper_ingot.png
   default_copper_lump.png
   default_mineral_copper.png
 
@@ -105,21 +87,8 @@ PilzAdam (WTFPL):
   default_obsidian_glass.png
   default_obsidian_shard.png
   default_mossycobble.png
-  default_gold_ingot.png
   default_gold_lump.png
   default_mineral_gold.png
-  default_diamond.png
-  default_tool_diamondpick.png
-  default_tool_diamondsword.png
-  default_tool_diamondshovel.png
-  default_tool_diamondaxe.png
-  default_tool_meseaxe.png
-  default_tool_meseshovel.png
-  default_tool_mesesword.png
-  default_tool_bronzeaxe.png
-  default_tool_bronzepick.png
-  default_tool_bronzeshovel.png
-  default_tool_bronzesword.png
   default_snowball.png
 
 jojoa1997 (WTFPL):
@@ -139,9 +108,70 @@ Zeg9 (CC BY-SA 3.0):
   default_copper_block.png
   default_bronze_block.png
   default_gold_block.png
+
+paramat (CC BY-SA 3.0):
+  wieldhand.png, based on character.png by Jordach (CC BY-SA 3.0)
+
+brunob.santos (CC BY-SA 4.0):
+  default_desert_cobble.png
+
+BlockMen (CC BY-SA 3.0):
+  default_stone_brick.png
+  default_wood.png
+  default_cobble.png
+  default_clay_brick.png
+  default_tool_steelsword.png
+  default_bronze_ingot.png
+  default_copper_ingot.png
+  default_gold_ingot.png
+  default_diamond.png
   default_diamond_block.png
+  default_tool_*.png
+  default_lava_source_animated.png
+  default_lava_flowing_animated.png
+  default_book.png
+  default_paper.png
+  default_stick.png
+  bubble.png
+  heart.png
+  gui_*.png
 
 Glass breaking sounds (CC BY 3.0):
   1: http://www.freesound.org/people/cmusounddesign/sounds/71947/
   2: http://www.freesound.org/people/Tomlija/sounds/97669/
   3: http://www.freesound.org/people/lsprice/sounds/88808/
+
+Mito551 (sounds) (CC BY-SA):
+  default_dig_choppy.ogg
+  default_dig_cracky.ogg
+  default_dig_crumbly.1.ogg
+  default_dig_crumbly.2.ogg
+  default_dig_dig_immediate.ogg
+  default_dig_oddly_breakable_by_hand.ogg
+  default_dug_node.1.ogg
+  default_dug_node.2.ogg
+  default_grass_footstep.1.ogg
+  default_grass_footstep.2.ogg
+  default_grass_footstep.3.ogg
+  default_gravel_footstep.1.ogg
+  default_gravel_footstep.2.ogg
+  default_gravel_footstep.3.ogg
+  default_gravel_footstep.4.ogg
+  default_grass_footstep.1.ogg
+  default_place_node.1.ogg
+  default_place_node.2.ogg
+  default_place_node.3.ogg
+  default_place_node_hard.1.ogg
+  default_place_node_hard.2.ogg
+  default_snow_footstep.1.ogg
+  default_snow_footstep.2.ogg
+  default_hard_footstep.1.ogg
+  default_hard_footstep.2.ogg
+  default_hard_footstep.3.ogg
+  default_sand_footstep.1.ogg
+  default_sand_footstep.2.ogg
+  default_wood_footstep.1.ogg
+  default_wood_footstep.2.ogg
+  default_dirt_footstep.1.ogg
+  default_dirt_footstep.2.ogg
+  default_glass_footstep.ogg

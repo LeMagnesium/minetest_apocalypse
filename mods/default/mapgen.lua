@@ -4,28 +4,28 @@
 -- Aliases for map generator outputs
 --
 
-minetest.register_alias("mapgen_air", "air")
 minetest.register_alias("mapgen_stone", "default:obsidian")
-minetest.register_alias("mapgen_tree", "default:black")
+minetest.register_alias("mapgen_tree", "wool:black")
 minetest.register_alias("mapgen_leaves", "default:clay")
-minetest.register_alias("mapgen_jungletree", "default:black")
+minetest.register_alias("mapgen_jungletree", "wool:brown")
 minetest.register_alias("mapgen_jungleleaves", "default:clay")
-minetest.register_alias("mapgen_apple", "default:demoniac_apple")
+minetest.register_alias("mapgen_apple", "apnodes:demoniac_apple")
 minetest.register_alias("mapgen_water_source", "default:lava_source")
-minetest.register_alias("mapgen_dirt", "default:bones")
+minetest.register_alias("mapgen_dirt", "bones:bones")
 minetest.register_alias("mapgen_sand", "default:glass")
-minetest.register_alias("mapgen_gravel", "default:demoniac_gravel")
+minetest.register_alias("mapgen_gravel", "apnodes:gravel")
 minetest.register_alias("mapgen_clay", "default:clay")
 minetest.register_alias("mapgen_lava_source", "default:lava_source")
 minetest.register_alias("mapgen_cobble", "default:cobble")
 minetest.register_alias("mapgen_mossycobble", "default:mossycobble")
-minetest.register_alias("mapgen_dirt_with_grass", "default:bones")
-minetest.register_alias("mapgen_junglegrass", "default:basic_flame")
+minetest.register_alias("mapgen_dirt_with_grass", "bones:bones")
+minetest.register_alias("mapgen_junglegrass", "fire:basic_flame")
 minetest.register_alias("mapgen_stone_with_coal", "default:obsidian_with_coal")
 minetest.register_alias("mapgen_stone_with_iron", "default:obsidian_with_iron")
 minetest.register_alias("mapgen_mese", "default:mese")
-minetest.register_alias("mapgen_desert_sand", "default:demoniac_desert_sand")
+minetest.register_alias("mapgen_desert_sand", "apnodes:desert_sand")
 minetest.register_alias("mapgen_desert_stone", "default:obsidian_glass")
+minetest.register_alias("mapgen_stair_cobble", "stairs:stair_cobble")
 
 --
 -- Ore generation
@@ -34,7 +34,7 @@ minetest.register_alias("mapgen_desert_stone", "default:obsidian_glass")
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "default:obsidian_with_coal",
-	wherein        = "default:stone",
+	wherein        = "default:obsidian",
 	clust_scarcity = 8*8*8,
 	clust_num_ores = 8,
 	clust_size     = 3,
@@ -45,7 +45,7 @@ minetest.register_ore({
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "default:obsidian_with_coal",
-	wherein        = "default:stone",
+	wherein        = "default:obsidian",
 	clust_scarcity = 24*24*24,
 	clust_num_ores = 27,
 	clust_size     = 6,
@@ -57,7 +57,7 @@ minetest.register_ore({
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "default:obsidian_with_iron",
-	wherein        = "default:stone",
+	wherein        = "default:obsidian",
 	clust_scarcity = 12*12*12,
 	clust_num_ores = 3,
 	clust_size     = 2,
@@ -68,7 +68,7 @@ minetest.register_ore({
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "default:obsidian_with_iron",
-	wherein        = "default:stone",
+	wherein        = "default:obsidian",
 	clust_scarcity = 9*9*9,
 	clust_num_ores = 5,
 	clust_size     = 3,
@@ -79,7 +79,7 @@ minetest.register_ore({
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "default:obsidian_with_iron",
-	wherein        = "default:stone",
+	wherein        = "default:obsidian",
 	clust_scarcity = 7*7*7,
 	clust_num_ores = 5,
 	clust_size     = 3,
@@ -91,7 +91,7 @@ minetest.register_ore({
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "default:obsidian_with_iron",
-	wherein        = "default:stone",
+	wherein        = "default:obsidian",
 	clust_scarcity = 24*24*24,
 	clust_num_ores = 27,
 	clust_size     = 6,
@@ -103,7 +103,7 @@ minetest.register_ore({
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "default:obsidian_with_mese",
-	wherein        = "default:stone",
+	wherein        = "default:obsidian",
 	clust_scarcity = 18*18*18,
 	clust_num_ores = 3,
 	clust_size     = 2,
@@ -115,7 +115,7 @@ minetest.register_ore({
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "default:obsidian_with_mese",
-	wherein        = "default:stone",
+	wherein        = "default:obsidian",
 	clust_scarcity = 14*14*14,
 	clust_num_ores = 5,
 	clust_size     = 3,
@@ -127,7 +127,7 @@ minetest.register_ore({
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "default:mese",
-	wherein        = "default:stone",
+	wherein        = "default:obsidian",
 	clust_scarcity = 36*36*36,
 	clust_num_ores = 3,
 	clust_size     = 2,
@@ -139,7 +139,7 @@ minetest.register_ore({
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "default:obsidian_with_gold",
-	wherein        = "default:stone",
+	wherein        = "default:obsidian",
 	clust_scarcity = 15*15*15,
 	clust_num_ores = 3,
 	clust_size     = 2,
@@ -151,7 +151,7 @@ minetest.register_ore({
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "default:obsidian_with_gold",
-	wherein        = "default:stone",
+	wherein        = "default:obsidian",
 	clust_scarcity = 13*13*13,
 	clust_num_ores = 5,
 	clust_size     = 3,
@@ -163,7 +163,7 @@ minetest.register_ore({
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "default:obsidian_with_diamond",
-	wherein        = "default:stone",
+	wherein        = "default:obsidian",
 	clust_scarcity = 17*17*17,
 	clust_num_ores = 4,
 	clust_size     = 3,
@@ -175,7 +175,7 @@ minetest.register_ore({
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "default:obsidian_with_diamond",
-	wherein        = "default:stone",
+	wherein        = "default:obsidian",
 	clust_scarcity = 15*15*15,
 	clust_num_ores = 4,
 	clust_size     = 3,
@@ -187,7 +187,7 @@ minetest.register_ore({
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "default:obsidian_with_copper",
-	wherein        = "default:stone",
+	wherein        = "default:obsidian",
 	clust_scarcity = 12*12*12,
 	clust_num_ores = 4,
 	clust_size     = 3,
@@ -198,7 +198,7 @@ minetest.register_ore({
 minetest.register_ore({
 	ore_type       = "scatter",
 	ore            = "default:obsidian_with_copper",
-	wherein        = "default:stone",
+	wherein        = "default:obsidian",
 	clust_scarcity = 9*9*9,
 	clust_num_ores = 5,
 	clust_size     = 3,
@@ -213,7 +213,7 @@ if minetest.setting_get("mg_name") == "indev" then
 		ore_type       = "scatter",
 		ore            = "default:water_source",
 		ore_param2     = 128,
-		wherein        = "default:stone",
+		wherein        = "default:obsidian",
 		clust_scarcity = 40*40*40,
 		clust_num_ores = 8,
 		clust_size     = 3,
@@ -225,7 +225,7 @@ if minetest.setting_get("mg_name") == "indev" then
 		ore_type       = "scatter",
 		ore            = "default:lava_source",
 		ore_param2     = 128,
-		wherein        = "default:stone",
+		wherein        = "default:obsidian",
 		clust_scarcity = 50*50*50,
 		clust_num_ores = 5,
 		clust_size     = 2,
@@ -236,7 +236,7 @@ if minetest.setting_get("mg_name") == "indev" then
 	minetest.register_ore({
 		ore_type       = "scatter",
 		ore            = "default:sand",
-		wherein        = "default:stone",
+		wherein        = "default:obsidian",
 		clust_scarcity = 20*20*20,
 		clust_num_ores = 5*5*3,
 		clust_size     = 5,
@@ -249,7 +249,7 @@ if minetest.setting_get("mg_name") == "indev" then
 		ore_type       = "scatter",
 		ore            = "default:water_source",
 		ore_param2     = 128,
-		wherein        = "default:stone",
+		wherein        = "default:obsidian",
 		clust_scarcity = 25*25*25,
 		clust_num_ores = 8,
 		clust_size     = 3,
@@ -261,7 +261,7 @@ if minetest.setting_get("mg_name") == "indev" then
 		ore_type       = "scatter",
 		ore            = "default:lava_source",
 		ore_param2     = 128,
-		wherein        = "default:stone",
+		wherein        = "default:obsidian",
 		clust_scarcity = 35*35*35,
 		clust_num_ores = 5,
 		clust_size     = 2,
@@ -269,6 +269,17 @@ if minetest.setting_get("mg_name") == "indev" then
 		height_max     = -100,
 	})
 end
+
+minetest.register_ore({
+	ore_type       = "scatter",
+	ore            = "default:clay",
+	wherein        = "default:sand",
+	clust_scarcity = 15*15*15,
+	clust_num_ores = 64,
+	clust_size     = 5,
+	height_max     = 0,
+	height_min     = -10,
+})
 
 function default.generate_ore(name, wherein, minp, maxp, seed, chunks_per_volume, chunk_size, ore_per_chunk, height_min, height_max)
 	minetest.log('action', "WARNING: default.generate_ore is deprecated")
@@ -351,7 +362,7 @@ function default.make_nyancat(pos, facedir, length)
 	elseif facedir == 3 then
 		tailvec.x = -1
 	else
-		print("default.make_nyancat(): Invalid facedir: "+dump(facedir))
+		--print("default.make_nyancat(): Invalid facedir: "+dump(facedir))
 		facedir = 0
 		tailvec.z = 1
 	end
@@ -360,7 +371,7 @@ function default.make_nyancat(pos, facedir, length)
 	for i=1,length do
 		p.x = p.x + tailvec.x
 		p.z = p.z + tailvec.z
-		minetest.set_node(p, {name="default:nyancat_rainbow"})
+		minetest.set_node(p, {name="default:nyancat_rainbow", param2=facedir})
 	end
 end
 
@@ -388,41 +399,6 @@ end
 
 minetest.register_on_generated(function(minp, maxp, seed)
 	if maxp.y >= 2 and minp.y <= 0 then
-		-- Generate clay
-		-- Assume X and Z lengths are equal
-		local divlen = 4
-		local divs = (maxp.x-minp.x)/divlen+1;
-		for divx=0+1,divs-1-1 do
-		for divz=0+1,divs-1-1 do
-			local cx = minp.x + math.floor((divx+0.5)*divlen)
-			local cz = minp.z + math.floor((divz+0.5)*divlen)
-			if minetest.get_node({x=cx,y=1,z=cz}).name == "default:water_source" and
-					minetest.get_node({x=cx,y=0,z=cz}).name == "default:sand" then
-				local is_shallow = true
-				local num_water_around = 0
-				if minetest.get_node({x=cx-divlen*2,y=1,z=cz+0}).name == "default:water_source" then
-					num_water_around = num_water_around + 1 end
-				if minetest.get_node({x=cx+divlen*2,y=1,z=cz+0}).name == "default:water_source" then
-					num_water_around = num_water_around + 1 end
-				if minetest.get_node({x=cx+0,y=1,z=cz-divlen*2}).name == "default:water_source" then
-					num_water_around = num_water_around + 1 end
-				if minetest.get_node({x=cx+0,y=1,z=cz+divlen*2}).name == "default:water_source" then
-					num_water_around = num_water_around + 1 end
-				if num_water_around >= 2 then
-					is_shallow = false
-				end	
-				if is_shallow then
-					for x1=-divlen,divlen do
-					for z1=-divlen,divlen do
-						if minetest.get_node({x=cx+x1,y=0,z=cz+z1}).name == "default:sand" then
-							minetest.set_node({x=cx+x1,y=0,z=cz+z1}, {name="default:clay"})
-						end
-					end
-					end
-				end
-			end
-		end
-		end
 		-- Generate papyrus
 		local perlin1 = minetest.get_perlin(354, 3, 0.7, 100)
 		-- Assume X and Z lengths are equal

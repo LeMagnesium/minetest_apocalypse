@@ -28,9 +28,10 @@ minetest.after(0, function()
 		on_put = function(inv, listname, index, stack, player)
 		end,
 		on_take = function(inv, listname, index, stack, player)
-			print(player:get_player_name().." takes item from creative inventory; listname="..dump(listname)..", index="..dump(index)..", stack="..dump(stack))
+			--print(player:get_player_name().." takes item from creative inventory; listname="..dump(listname)..", index="..dump(index)..", stack="..dump(stack))
 			if stack then
-				print("stack:get_name()="..dump(stack:get_name())..", stack:get_count()="..dump(stack:get_count()))
+				minetest.log("action", player:get_player_name().." takes "..dump(stack:get_name()).." from creative inventory")
+				--print("stack:get_name()="..dump(stack:get_name())..", stack:get_count()="..dump(stack:get_count()))
 			end
 		end,
 	})
@@ -47,7 +48,7 @@ minetest.after(0, function()
 		inv:add_item("main", ItemStack(itemstring))
 	end
 	creative_inventory.creative_inventory_size = #creative_list
-	print("creative inventory size: "..dump(creative_inventory.creative_inventory_size))
+	--print("creative inventory size: "..dump(creative_inventory.creative_inventory_size))
 end)
 
 -- Create the trash field
@@ -71,9 +72,14 @@ trash:set_size("main", 1)
 creative_inventory.set_creative_formspec = function(player, start_i, pagenum)
 	pagenum = math.floor(pagenum)
 	local pagemax = math.floor((creative_inventory.creative_inventory_size-1) / (6*4) + 1)
-	player:set_inventory_formspec("size[13,7.5]"..
+	player:set_inventory_formspec(
+			"size[13,7.5]"..
 			--"image[6,0.6;1,2;player.png]"..
-			"list[current_player;main;5,3.5;8,4;]"..
+			default.gui_bg..
+			default.gui_bg_img..
+			default.gui_slots..
+			"list[current_player;main;5,3.5;8,1;]"..
+			"list[current_player;main;5,4.75;8,3;8]"..
 			"list[current_player;craft;8,0;3,3;]"..
 			"list[current_player;craftpreview;12,1;1,1;]"..
 			"list[detached:creative;main;0.3,0.5;4,6;"..tostring(start_i).."]"..
@@ -81,7 +87,9 @@ creative_inventory.set_creative_formspec = function(player, start_i, pagenum)
 			"button[0.3,6.5;1.6,1;creative_prev;<<]"..
 			"button[2.7,6.5;1.6,1;creative_next;>>]"..
 			"label[5,1.5;Trash:]"..
-			"list[detached:creative_trash;main;5,2;1,1;]")
+			"list[detached:creative_trash;main;5,2;1,1;]"..
+			default.get_hotbar_bg(5,3.5)
+	)
 end
 minetest.register_on_joinplayer(function(player)
 	-- If in creative mode, modify player's inventory forms
@@ -122,20 +130,21 @@ minetest.register_on_player_receive_fields(function(player, formname, fields)
 end)
 
 if minetest.setting_getbool("creative_mode") then
-	
+	local digtime = 0.5
 	minetest.register_item(":", {
 		type = "none",
 		wield_image = "wieldhand.png",
 		wield_scale = {x=1,y=1,z=2.5},
+		range = 10,
 		tool_capabilities = {
 			full_punch_interval = 0.5,
 			max_drop_level = 3,
 			groupcaps = {
-				crumbly = {times={[1]=0.5, [2]=0.5, [3]=0.5}, uses=0, maxlevel=3},
-				cracky = {times={[1]=0.5, [2]=0.5, [3]=0.5}, uses=0, maxlevel=3},
-				snappy = {times={[1]=0.5, [2]=0.5, [3]=0.5}, uses=0, maxlevel=3},
-				choppy = {times={[1]=0.5, [2]=0.5, [3]=0.5}, uses=0, maxlevel=3},
-				oddly_breakable_by_hand = {times={[1]=0.5, [2]=0.5, [3]=0.5}, uses=0, maxlevel=3},
+				crumbly = {times={[1]=digtime, [2]=digtime, [3]=digtime}, uses=0, maxlevel=3},
+				cracky = {times={[1]=digtime, [2]=digtime, [3]=digtime}, uses=0, maxlevel=3},
+				snappy = {times={[1]=digtime, [2]=digtime, [3]=digtime}, uses=0, maxlevel=3},
+				choppy = {times={[1]=digtime, [2]=digtime, [3]=digtime}, uses=0, maxlevel=3},
+				oddly_breakable_by_hand = {times={[1]=digtime, [2]=digtime, [3]=digtime}, uses=0, maxlevel=3},
 			},
 			damage_groups = {fleshy = 10},
 		}

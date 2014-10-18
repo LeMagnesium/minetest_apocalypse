@@ -9,7 +9,7 @@ minetest.register_node("fire:basic_flame", {
 	}},
 	inventory_image = "fire_basic_flame.png",
 	light_source = 14,
-	groups = {igniter=2,dig_immediate=3},
+	groups = {igniter=2,dig_immediate=3,hot=3},
 	drop = '',
 	walkable = false,
 	buildable_to = true,
@@ -153,7 +153,7 @@ minetest.register_abm({
 minetest.register_abm({
 	nodenames = {"fire:basic_flame"},
 	interval = 1,
-	chance = 2,
+	chance = 100,
 	action = function(p0, node, _, _)
 		-- If there is water or stuff like that around flame, remove flame
 		if fire.flame_should_extinguish(p0) then
